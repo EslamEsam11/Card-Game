@@ -1,0 +1,149 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html::-webkit-scrollbar {
+  width: 0.5rem;
+  background: #222;
+}
+html::-webkit-scrollbar-thumb {
+  background: #680091;
+  border-radius: 5rem;
+}
+a {
+  text-decoration: none !important;
+}
+body {
+  background-image: url(../img/1_3cnTASBmYRZxalVCohnzNw.jpg) !important;
+  background-size: cover;
+  height: 120vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body h2 {
+  background-color: #680091;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+/* game-container */
+.game-container .container {
+  width: 640px;
+  height: 640px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 10px;
+  perspective: 1000px;
+}
+.card {
+  border: 1px solid #680091;
+  border-radius: 10px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.2s;
+  box-shadow: 1px 1px 50px #680091;
+}
+.card:active {
+  transform: scale(95%);
+  transition: all 0.2s;
+}
+.card.flip {
+  transform: rotateY(180deg);
+}
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+}
+.front {
+  transform: rotateY(180deg);
+}
+/* footer */
+.footer {
+  margin-top: 30px;
+  border-top: 1px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 600px;
+  justify-content: space-between;
+}
+.footer .socialMedia {
+  display: flex;
+  gap: 50px;
+  font-size: 20px;
+  padding: 20px 0;
+}
+.socialMedia a {
+  color: #680091;
+}
+.fa-facebook,
+.fa-github {
+  color: white;
+}
+.myPortfolio {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+.myPortfolio .fa-user {
+  font-size: 20px;
+  color: #680091;
+}
+.myPortfolio a h1 {
+  color: white;
+  font-size: 20px;
+}
+#phone{
+    position: relative;
+    color: #680091;
+}
+#phone h2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100px;
+    font-size: 14px;
+    background: #68009150;
+    display: none;
+}
+#phone:hover h2 {
+    display: block;
+}
+@media (min-width: 768px) {
+  .container,
+  .container-md,
+  .container-sm {
+    max-width: 720px;
+  }
+}
+@media (max-width: 768px) {
+  .game-container .container {
+    width: 383px;
+    height: 431px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 10px;
+    perspective: 1000px;
+  }
+  .footer {
+    margin-top: 30px;
+    border-top: 1px solid white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .myPortfolio {
+    display: none;
+  }
+}
